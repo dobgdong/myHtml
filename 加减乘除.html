@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>IFE ECMAScript</title>
+</head>
+<body>
+    <input id="first-number" type="number" placeholder="第一个数字">
+    <input id="second-number" type="number" placeholder="第二个数字">
+    <button id="add-btn">加</button>
+    <button id="minus-btn">减</button>
+    <button id="times-btn">乘</button>
+    <button id="divide-btn">除</button>
+    <p id="result">运算结果</p>
+    <script>
+      window.onload = function() {
+        var oBtn_add = document.getElementById("add-btn");
+        var oBtn_minus = document.getElementById("minus-btn");
+        var oBtn_times = document.getElementById("times-btn");
+        var oBtn_divide = document.getElementById("divide-btn");
+        var p_result = document.getElementById("result");
+        var oInp_one = document.getElementById("first-number");
+        var oInp_two = document.getElementById("second-number");
+
+        oBtn_add.onclick = function() {
+          var num1 = parseFloat(oInp_one.value);
+          var num2 = parseFloat(oInp_two.value);
+          var res = num1 + num2;
+          p_result.innerHTML = "运算结果        " + res;
+        };
+
+        oBtn_minus.onclick = function() {
+          var num1 = parseFloat(oInp_one.value);
+          var num2 = parseFloat(oInp_two.value);
+          var res = num1 - num2;
+          p_result.innerHTML = "运算结果        " + res;
+        };
+
+        oBtn_times.onclick = function() {
+          var num1 = parseFloat(oInp_one.value);
+          var num2 = parseFloat(oInp_two.value);
+          var res = num1 * num2;
+          p_result.innerHTML = "运算结果        " + res;
+        };
+
+        oBtn_divide.onclick = function() {
+          var num1 = parseFloat(oInp_one.value);
+          var num2 = parseFloat(oInp_two.value);
+          if(num1 == 0) {
+            alert("除数不能为0");
+          }else {
+            var res = num1 / num2;
+          }
+          p_result.innerHTML = "运算结果        " + res;
+        };
+
+      }
+    </script>
+</body>
+</html>
