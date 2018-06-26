@@ -1,0 +1,304 @@
+/*重置浏览器的默认样式*/
+body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img{margin:0; padding:0; border:0; list-style:none;}
+/*全局控制*/
+body{font-family:Arial, Helvetica, sans-serif,"宋体"; font-size:12px;}
+a:link,a:visited{color:#222;text-decoration:none;}     /*未点击和点击后的样式*/
+a:hover{color:#FD4913;}                                     /*鼠标移上时的样式*/
+/*top*/
+.top{
+ 	margin:5px auto 0px auto;
+ 	padding:0px;
+ 	width:1000px;
+ 	height:83px;
+ 	text-align:left;
+}
+.logo{
+	width:307px;
+	height:61px;
+	float:left;
+	margin-top:10px;
+}
+.pic01{
+	width:289px;
+	height:68px;
+	float:left;
+	margin:4px 0px 0px 20px;
+}
+.options{
+	float:right;
+	margin:48px 0px 0px 0px;
+}
+.home{
+	float:left;
+	width:95px;
+	height:33px;
+	margin:0 10px;
+	border:1px solid #fff;
+	position:relative;
+}
+.fav{
+	float:left;
+	width:80px;
+	height:35px;
+	margin:0 10px;
+}
+.home span{
+	background:url(../images/icon_bg.gif) no-repeat 0 -30px;
+	float:left;
+	width:17px;
+	height:14px;
+	margin:9px 6px;
+}
+.home .span2{background:url(../images/icon_bg.gif) no-repeat -60px -60px;}
+.home em{
+	background:url(../images/icon_bg.gif) no-repeat -60px -120px;
+	float:left;
+	width:6px;
+	height:5px;
+	margin:15px 6px 0 6px;
+	display:inline;
+}
+.home #list{
+	width:95px;
+	height:50px;
+	border:1px solid #E5E5E5;
+	position:absolute;
+	left:-1px;
+	top:33px;
+	background:#fff;
+	display:none;
+}
+.home #list a{
+	text-align:center;
+	height:25px;
+	width:95px;
+	line-height:25px;
+	margin:0;
+	display:inline-block;
+}
+.home #list a:hover{background:#E5E5E5;}
+.fav span{
+	background:url(../images/icon_bg.gif) no-repeat -60px -90px;
+	float:left;
+	width:16px;
+	height:14px;
+	margin:9px 6px 0 6px;
+	display:inline;
+}
+.fav .span3{background:url(../images/icon_bg.gif) no-repeat -60px -150px;}
+.home a,.fav a{
+	color:#9b9b9b;
+	float:left;
+	margin-top:9px;
+}
+ /*top*/
+ /*nav*/
+ .nav{
+ 	margin:9px 0px 0px 0px;
+ 	padding:0px;
+ 	width:100%;
+ 	height:40px;
+ 	line-height:40px;
+ 	background:url(../images/nav_bg.gif) repeat-x;
+ 	vertical-align:middle;
+ 	text-align:left;
+ }
+ .nav_con{
+ 	margin:0px auto;
+ 	padding:0px;
+ 	width:1000px;
+ }
+ .nav ul{
+ 	margin:0px 0px 0px 15px;
+ 	padding:0px;
+ 	width:1000px;
+ 	list-style:none;
+ }
+ .nav ul li{
+ 	margin:0px 13px 0px 0px;
+ 	padding:0px;
+ 	float:left;
+ }
+ .nav ul .cur a{
+ 	color:#FFF;
+ 	font-size:14px;
+ 	font-weight:bold;
+ 	padding:0px 13px;
+ 	float:left;
+ 	background:url(../images/left.png) no-repeat left top;
+ 	height:43px;
+ 	display:block;
+ 	padding:0px 13px 0px 13px;
+ 	margin:-3px -25px 0px 0px;
+ 	position:relative;
+ 	float:left;
+ 	display:inline;
+ 	color:#FFF;
+ 	overflow:hidden;
+ }
+ .nav ul .cur span{
+ 	display:block;
+ 	background:url(../images/right.png) no-repeat top right;
+ 	height:43px;
+ 	padding:3px 25px 0px 0px;
+ 	float:left;
+ }
+ .nav ul li a{
+ 	color:#FFF;
+ 	font-size:14px;
+ 	font-weight:bold;
+ 	padding:0px 13px;
+ 	float:left;
+ }
+ .nav ul li a:hover{
+ 	background:url(../images/left.png) no-repeat left top;
+ 	 height:43px;
+ 	 display:block;
+ 	 padding:0px 13px 0px 13px;
+ 	 margin:-3px -25px 0px 0px;
+ 	 position:relative;
+ 	 float:left;
+ 	 display:inline;
+ 	 color:#FFF;
+ 	 overflow:hidden;
+ 	}
+ .nav ul li a:hover span{
+ 	display:block;
+ 	background:url(../images/right.png) no-repeat top right;
+ 	height:43px;
+ 	padding:3px 25px 0px 0px;
+ 	float:left;
+ }
+ /*nav*/
+ /*banner*/
+ .banner{
+ 	width:1000px;
+ 	height:400px;
+ 	margin:13px auto 15px auto;
+ 	position:relative;
+ 	overflow: hidden;
+ }
+ .banner .banner_pic .pic{display:none;}
+ .banner .banner_pic .current{display:block;}
+ .banner ol{
+ 	position:absolute;
+ 	left:566px;
+ 	bottom:26px;
+ }
+ .banner ol .but{
+ 	float:left;
+ 	width:26px;
+ 	height:22px;
+ 	border:1px solid #FF7101;
+ 	margin-right:12px;
+ 	text-align:center;
+ 	line-height:22px;
+ 	background:#fff;
+ 	color:#FF7101;
+ 	font-size:14px;
+ 	font-weight:bold;
+ }
+ .banner ol li{cursor:pointer;}
+ .banner ol .current{
+ 	color:#fff;
+ 	background:#FF7101;
+ 	float:left;
+ 	width:26px;
+ 	height:22px;
+ 	border:1px solid #FF7101;
+ 	margin-right:12px;
+ 	text-align:center;
+ 	line-height:22px;
+ 	font-size:14px;
+ 	font-weight:bold;
+ }
+/*banner*/
+
+/* content */
+.content {
+  width: 1000px;
+  height: 1000px;
+  margin: 20px auto;
+
+}
+.content .msg {
+	margin:0 200px;
+}
+.content .msg h3 {
+	font-size: 20px;
+	margin-top: 10px;
+}
+.content .msg p {
+	margin: 0 -20px;
+	margin-top: 10px;
+	height:20px;
+	color: rgba(73, 73, 73, 0.67);
+	font-size: 12px;
+}
+.content .msg .price {
+	font-size: 30px;
+	color: #ff2f2c;
+	margin: 10px;
+}
+.content .msg button {
+	width: 100px;
+	height: 30px;
+	color: #fff;
+	background-color: #ff6102;
+	border: none;
+	border-radius: 3px;
+}
+.content .msg button:hover {
+	background-color: rgba(0, 0, 0, .3);
+}
+.content .top,
+.content .bottom {
+  height: 400px;
+}
+.top .top_left,
+.top .top_right,
+.bottom .bottom_left,
+.bottom .bottom_right {
+  float: left;
+  width: 500px;
+  height: 600px;
+}
+.top img,
+.bottom img {
+  width: 400px;
+  height: 300px;
+  margin-left: 50px;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+.shadow {
+	box-shadow:0 0 20px 0 #000000;
+}
+.content p {
+  width: 400px;
+  height: 100px;
+  text-align: left;
+  font-size: 16px;
+  color: #000;
+  margin-left: 50px;
+  margin-top: 18px;
+
+}
+/* content */
+
+/*footer*/
+.footer{
+	width:100%;
+	background:#303030;
+	clear:both;
+	padding-bottom:25px;
+}
+.footer .btn a {
+  color: #fff;
+}
+.footer p {
+  font-size: 12px;
+  color: #fff;
+  text-align: center;
+}
+/*footer*/
