@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			html,body {
+				height: 100%;
+				overflow: hidden;
+			}
+			#msk {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate3d(-50%,-50%,0);
+				background: gray;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="msk"></canvas>
+	</body>
+	<script>
+		window.onload = function() {
+			var canvas = document.getElementById('msk');
+			if(canvas.getContext) {
+				var ctx = canvas.getContext('2d');
+				
+				var img = new Image();
+				img.src = 'logo.png';
+				img.onload = function() {
+					canvas.width = img.width * 2;
+					canvas.height = img.height;
+					draw();
+				};
+				
+				function draw() {
+					ctx.drawImage(img,0,0);
+					
+					
+					var oldImagedata = ctx.getImageData(0,0,img.width,img.height);
+					var newImagedata = ctx.createImageData(img.width,img.height);
+					
+//					写马赛克的代码
+//					1.选取一个马赛克矩形
+//					2.从马赛克矩形中随机抽出一个像素点的信息(rgba)
+//					3.将整个马赛克矩形中像素点信息统一调成随机抽出的那个
+					
+					var size = 5;
+					for(var i=0;i<oldImagedata.width/size;i++) {
+						for(var j=0;j<oldImagedata.height/size;j++) {
+//							(i,j) --->  每一个马赛克矩形的坐标
+//							(0,0) --> (0,0) 到   (4,4)
+//							(0,1) --> (0,5) 到   (4,9)
+//							(1,0) --> (5,0) 到   (9,4)
+//							(1,1) --> (5,5) 到   (9,9)
+							
+//							Math.random() 区间是[0,1)
+//							Math.random() * size  区间是:[0,5)
+//							Math.floor()  向下取整
+//							i*size  -->   x轴的个数
+//							j*size  -->   y轴的个数
+							var color =  getPxInfo(oldImagedata,i*size + Math.floor(Math.random()*size),j*size + Math.floor(Math.random()*size));
+							
+							for(var a=0;a<size;a++) {
+								for(var b=0;b<size;b++) {
+									setPxInfo(newImagedata,i*size + a,j*size + b,color);
+								}
+							}
+						}
+					}
+					ctx.putImageData(newImagedata,img.width,0);
+				}
+				
+				function getPxInfo(imagedata,x,y) {
+					var color = [];
+					var data = imagedata.data;
+					var w = imagedata.width;
+					var h = imagedata.height;
+					//r
+					color[0] = data[(y*w+x)*4];
+					//g
+					color[1] = data[(y*w+x)*4 + 1];
+					//b
+					color[2] = data[(y*w+x)*4 + 2];
+					//a
+					color[3] = data[(y*w+x)*4 + 3];
+					
+					return color;
+				}
+				
+				function setPxInfo(imagedata,x,y,color) {
+					var data = imagedata.data;
+					var w = imagedata.width;
+					var h = imagedata.height;
+					//r
+					data[(y*w+x)*4] = color[0];
+					//g
+					data[(y*w+x)*4 + 1] = color[1];
+					//b
+					data[(y*w+x)*4 + 2] = color[2];
+					//a
+					data[(y*w+x)*4 + 3] = color[3];
+					
+				}
+			}
+		};
+	</script>
+</html>
