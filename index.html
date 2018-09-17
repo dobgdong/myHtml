@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			#box {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+			}
+			.page {
+				position: relative;
+				width: 100%;
+				height: 100%;
+			}
+			.page1,
+			.page4,
+			.page2 {
+				background: #6B8CFF;
+			}
+			.page3 {
+				background: #000000;
+			}
+			/*第一页样式*/
+			.page1-cloud01 {
+				position: absolute;
+				top: 12%;
+				left: 6%;
+				animation: cloud1 8s infinite;
+			}
+			.page1-cloud02 {
+				position: absolute;
+				top: 14%;
+				left: 30%;
+				animation: cloud2 8s infinite;
+			}
+			.page1-cloud03 {
+				position: absolute;
+				top: 15%;
+				left: 64%;
+				animation: cloud3 8s infinite;
+			}
+			@keyframes cloud1{
+				0%{left: 6%;}
+				50%{left: 35%;}
+				100%{left: 6%;}
+			}
+			@keyframes cloud2{
+				0%{left: 30%;}
+				50%{left: 58%;}
+				100%{left: 30%;}
+			}
+			@keyframes cloud3{
+				0%{left: 64%;}
+				50%{left: 70%;}
+				100%{left: 64%;}
+			}
+			.page1-stone01 {
+				position: absolute;
+				top: 51%;
+				left: 17%;
+				animation: stone 2s infinite;
+			}
+			.page1-stone02 {
+				position: absolute;
+				top: 51%;
+				left: 57%;
+				animation: stone 1s infinite;
+			}
+			@keyframes stone{
+				0%{top: 51%;}
+				50%{top: 43%;}
+				100%{top: 51%;}
+			}
+			.page1-man {
+				position: absolute;
+				top: 81%;
+				left: -100%;
+				animation: run 3s forwards;
+			}
+			@keyframes run{
+				from{left: -100%;}
+				to{left: 30%;}
+			}
+			.page1-woman {
+				position: absolute;
+				top: 81%;
+				left: 59%;
+				display: none;
+			}
+			.page1-fly {
+				position: absolute;
+				top: 2%;
+				left: -11%;
+				animation: fly 3s infinite;
+			}
+			@keyframes fly{
+				0%{left: -11%;}
+				100%{left: 79%;}
+			}
+			.page1-money01 {
+				position: absolute;
+				top: 35%;
+				left: 21%;
+				animation: money 1s infinite;
+			}
+			
+			@keyframes money{
+				0%{top: 35%;}
+				50%{top: 38%;}
+				100%{top: 35%;}
+			}
+			
+			/*第二页样式*/
+			.wall {
+				width: 100%;
+				height: 7%;
+				background: url(img/mary160206-01.png) repeat-x;
+				position: absolute;
+				left: 0;
+				bottom: 0;
+			}
+			.page2-fight {
+				width: 314px;
+				height: 382px;
+				position: absolute;
+				bottom: 58px;
+			}
+			.page2-monster {
+				width: 200px;
+				height: 300px;
+				position: absolute;
+				bottom: 103px;
+				right: 48px;
+				display: none;
+				animation: runMon 2s linear 1;
+			}
+			@keyframes runMon{
+				0%{}
+				50%{transform: scale(1.2);}
+				100%{transform: scale(1);}
+			}
+			.page2-hy{
+				width: 90px;
+				height: 90px;
+				position: absolute;
+				bottom: 204px;
+				left: 376px;
+				display: none;
+			}
+			.page2-hy1{
+				width: 90px;
+				height: 90px;
+				position: absolute;
+				bottom: 204px;
+				left: 521px;
+				display: none;
+			}
+			.page2-hy2{
+				width: 90px;
+				height: 90px;
+				position: absolute;
+				bottom: 204px;
+				left: 671px;
+				display: none;				
+			}
+			.page2-wg{
+				width: 200px;
+				height: 200px;
+				position: absolute;
+				bottom: 166px;
+				right: 49px;
+				display: none;
+				animation: run1 2s linear infinite;
+			}
+			@keyframes run1{
+				from{transform: rotate(0deg);}
+				to{transform: rotate(-360deg);}
+			}
+			.page2-cloud02 {
+				position: absolute;
+				top: -1px;
+				left: -77px;
+				width: 403px;
+				z-index: 99;
+			}
+			.page2-niao {
+				position: absolute;
+				top: 30%;
+				left: 0;
+				width: 300px;
+				height: 300px;
+				animation: moveNiao 10s infinite;
+			}
+			@keyframes  moveNiao{
+				0%{transform: translateX(0px) rotateY(0deg);}
+				49%{transform: translateX(390px) rotateY(0deg);}
+				50%{transform: translateX(400px) rotateY(180deg);}
+				100%{transform: translateX(0px) rotateY(180deg);}
+			}
+			/*第三页样式*/
+			.page3 {
+				width: 100%;
+				height: 100%;
+			}
+			.page3-man {
+				position: absolute;
+				top: -100%;
+				left: 0;
+				opacity: 1;
+			}
+			.page3-fight {
+				position: absolute;
+				top: 81%;
+				left: 0;
+				display: none;
+			}
+			.page3-box {
+				position: absolute;
+				top: 81%;
+				left: 93px;
+				display: none;
+			}
+			.page3-flower {
+				position: absolute;
+				top: 88%;
+				left: 60%;
+				display: none;
+			}
+			.page3-fire {
+				position: absolute;
+				top: 87%;
+				left: 63%;
+				display: none;
+			}
+			.page3-star01 {
+				position: absolute;
+				top: 11%;
+				left: 73%;
+				display: none;
+			}
+			.page3-star02 {
+				position: absolute;
+				top: 13%;
+				display: none;
+				left: 8%;
+			}
+			.page3-star03 {
+				position: absolute;
+				top: 22%;
+				display: none;
+				left: 30%;
+			}
+			.page3-cloud01 {
+				position: absolute;
+				top: 12%;
+				display: none;
+				left: 6%;
+			}
+			.page3-cloud02 {
+				position: absolute;
+				top: 14%;
+				display: none;
+				left: 30%;
+			}
+			.page3-cloud03 {
+				position: absolute;
+				top: 15%;
+				display: none;
+				left: 64%;
+			}
+			.page3-monster {
+				position: absolute;
+				top: 43%;
+				left: 47%;
+				display: none;
+				transform: scale(1);
+				animation: monster 10s;
+			}
+			@keyframes monster{
+				0%{transform: scale(1);left: 47%;}
+				50%{transform: scale(2);left: 30%;}
+				100%{transform: scale(1);left: -100%;}
+			}
+			
+			/*第四页样式*/
+			.page4 .msg {
+				position: absolute;
+				top: 20%;
+				left: 30%;
+				display: none;
+			}
+			.page4 .msg h1 {
+				width: 48%;
+				font-size: 84px;
+				font-family: "微软雅黑";
+				color: #F5F5F5;
+				font-weight: bolder;
+			}
+			.page4 .msg p {
+				width: 80%;
+				color: orange;
+				font-size: 60px;
+				font-weight: bold;
+				font-family: "gill sans mt";
+			}
+			.page4-man {
+				width: 0%;
+				position: absolute;
+				bottom: 31%;
+				left: 15%;
+				animation: run02 2s infinite;
+			}
+			@keyframes run02{
+				0%{}
+				50%{transform: scale(1.2);}
+				100%{transform: scale(1);}
+			}
+			.flower {
+				height: 0;
+				position: absolute;
+				bottom: 6%;
+				left: 0;
+			}
+			.page4-man02 {
+				position: absolute;
+				bottom: 6%;
+				left: -100%;
+			}
+			
+			/*音乐播放样式*/
+			#music {
+				width: 80px;
+				height: 80px;
+				position: fixed;
+				right: 22px;
+				top: 40px;
+				z-index: 9999;
+				animation: run1 2s linear infinite;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div id="music">
+				<img src="img/musicBtn.png" alt=""/>
+				<audio src="music/起风了.mp3" id="mu" autoplay="autoplay"></audio>
+			</div>
+			<!--第一页-->
+			<div class="page page1">
+				<img src="img/cloud01.png" alt="" class="page1-cloud01" width="200" height="100"/>
+				<img src="img/cloud02.png" alt="" class="page1-cloud02" width="400" height="300"/>
+				<img src="img/cloud03.png" alt="" class="page1-cloud03" width="200" height="150"/>
+				<img src="img/mary160206-01.png" alt="" class="page1-stone01" width="200" height="200"/>
+				<img src="img/mary160206-13.png" alt="" class="page1-stone02" width="200" height="200"/>
+				<img src="img/mary160206-06.png" class="page1-man" width="400" height="300"/>
+				<img src="img/mary160206-11.png" class="page1-woman" width="400" height="300"/>
+				<img src="img/mary160206-09.png" class="page1-fly" width="200" height="200"/>
+				<img src="img/mary160206-22.png" class="page1-money01" />
+			</div>
+			<!--第二页-->
+			<div class="page page2">
+				<img src="img/mary160206-24.png" class="page2-fight">
+				<img src="img/mary160206-05.png" class="page2-niao">
+				<img src="img/cloud02.png" alt="" class="page2-cloud02" width="400" height="300"/>
+				<img src="img/火焰图.png"  class="page2-hy"/>
+				<img src="img/火焰图.png" class="page2-hy1"/>
+				<img src="img/火焰图.png" class="page2-hy2"/>
+				<img src="img/mary160206-18.png" class="page2-monster"/>
+				<img src="img/1.png" class="page2-wg"/>
+				<div class="wall"></div>
+			</div>
+			<!--第三页-->
+			<div class="page page3">
+				<img src="img/cloud01.png" alt="" class="page3-cloud01" width="200" height="100"/>
+				<img src="img/cloud02.png" alt="" class="page3-cloud02" width="400" height="300"/>
+				<img src="img/cloud03.png" alt="" class="page3-cloud03" width="200" height="150"/>
+				<img src="img/mary160206-10.png" class="page3-flower" width="300" height="200"/>
+				<img src="img/mary160206-08.png" class="page3-man" width="400" height="300"/>
+				<img src="img/mary160206-24.png" class="page3-fight" width="500" height="400"/>
+				<img src="img/mary160206-15.png" class="page3-star01"/>
+				<img src="img/mary160206-15.png" class="page3-star02"/>
+				<img src="img/mary160206-15.png" class="page3-star03"/>
+				<img src="img/mary160206-12.png" class="page3-monster"/>
+				<img src="img/mary160206-13.png" class="page3-box" width="300" height="300"/>
+				<img src="img/火焰图.png" class="page3-fire" width="100" height="80"/>
+			</div>
+			<!--第四页-->			
+			<div class="page page4">
+				<img src="img/mary160206-08.png" class="page4-man" width="500" height="400"/>
+				<img src="img/mary160206-16.png" class="page4-man02" width="300" height="200"/>
+				<div class="flower">
+					<img src="img/mary160206-02.png"/>
+					<img src="img/mary160206-02.png"/>
+					<img src="img/mary160206-02.png"/>
+				</div>
+				<div class="wall"></div>
+				<div class="msg">
+					<h1>人生就是不停的打怪</h1>
+					<p>要相信胜利总在前方</p>
+				</div>
+			</div>
+		</div>
+		
+		
+		<script src="js/jquery-2.1.1.min.js"></script>
+		<script src="js/jquery.touchSwipe.min.js"></script>
+		<script type="text/javascript">
+			window.onload = function() {
+//				音乐播放
+				var mu1 = document.getElementById('music');
+				var mu = document.getElementById('mu');
+				var img = document.getElementsByTagName('img')[0];
+				mu1.onclick = function() {
+					if(mu.paused) {
+						mu.play();
+						img.src = "img/musicBtn.png"
+					}else {
+						mu.pause();
+						img.src = "img/musicBtnOff.png"
+					}
+				};
+				
+//				第一页的效果
+				$('.page1-woman').fadeIn(2000);
+				
+				var nowPage = 0;
+				$('#box').swipe({
+					swipe: function(event,dire) {
+						if(dire == "up") {
+							nowPage++;
+						}else if(dire == "down") {
+							nowPage--;
+						}
+						
+						if(nowPage > 3) {
+							nowPage = 3;
+						}
+						if(nowPage < 0) {
+							nowPage = 0;
+						}
+						
+						$('#box').animate({
+							'top' : nowPage * -100 + '%'
+						},1000,function() {
+//							第二页效果
+							if(nowPage == 1) {
+								$(".page2-monster").fadeIn(2000,function(){
+									$(".page2-fight").fadeIn(1000,function(){
+										$(".page2-hy").fadeIn(100,function(){
+											$(".page2-hy1").fadeIn(200,function(){
+												$(".page2-hy2").fadeIn(200,function(){
+													$(".page2-monster").fadeOut(50,function(){})
+													$(".page2-wg").fadeIn(100,function(){
+														$(".page2-hy").fadeOut(100)
+														$(".page2-hy1").fadeOut(100)
+														$(".page2-hy2").fadeOut(100)
+													})
+												})
+											})
+										})
+									})
+								})
+							}
+
+//							第三页效果
+							if(nowPage == 2) {
+								$('.page3').fadeIn(2000,function() {
+									$('.page3-box').fadeIn(2000);
+									$('.page3-star01').fadeIn(2000);
+									$('.page3-star02').fadeIn(2000);
+									$('.page3-star03').fadeIn(2000);
+									$('.page3-cloud01').fadeIn(2000);
+									$('.page3-cloud02').fadeIn(2000);
+									$('.page3-cloud03').fadeIn(2000);
+									$('.page3-monster').fadeIn(2000);
+									$('.page3-man').animate({
+										'top' : '81%'
+									},2000,function() {
+										$('.page3-man').fadeOut(100);
+										$('.page3-box').fadeOut(2000);
+										$('.page3-fight').fadeIn(2000);
+										$('.page3-flower').fadeIn(2000,function() {
+											$('.page3-fire').fadeIn(2000,function() {
+												$('.page3-flower').fadeOut(100);
+												$('.page3-fire').fadeOut(100,function() {
+													$('.page3-fight').animate({
+														'left': '-100%'
+													},2000);
+												});
+											});
+										});
+									})
+								});
+							}
+							
+//							第四页效果
+							if(nowPage == 3) {
+								$('.page4-man').animate({
+									'width': '70%'
+								},1000,function() {
+									$('.msg').fadeIn(1000,function() {});
+									$('.flower').animate({
+										'height': '132px'
+									},1000);
+									$('.page4-man02').animate({
+										'left': '70%'
+									},1000);
+								});
+							}
+							
+						});
+					}
+				});
+			};
+		</script>
+	</body>
+</html>
